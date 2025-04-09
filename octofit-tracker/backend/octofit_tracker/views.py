@@ -1,6 +1,15 @@
+from django.http import JsonResponse
 from rest_framework import viewsets
 from .models import User, Team, Activity, Leaderboard, Workout
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
+
+def api_root(request):
+    return JsonResponse({
+        "codespace_url": "https://crispy-disco-4jqxwj754w737vpj-8000.app.github.dev",
+        "note": "Use the codespace URL to avoid HTTPS certificate issues."
+    })
+
+# Add the api_root function to handle the root endpoint.
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()

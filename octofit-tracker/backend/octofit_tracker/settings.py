@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-7=^la#)c(0o-@h9=in$wu_jfs_+k=+1$9yghs*etglwc4g)=lg
 DEBUG = True
 
 # Allow all hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['crispy-disco-4jqxwj754w737vpj-8000.app.github.dev', 'localhost']
 
 
 # Application definition
@@ -144,3 +144,6 @@ CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
 ]
+
+# Ensure the application respects the X-Forwarded-Host header
+USE_X_FORWARDED_HOST = True
